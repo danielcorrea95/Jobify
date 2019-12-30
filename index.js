@@ -5,6 +5,8 @@ const boryParser = require('body-parser')
 const sqlite = require('sqlite')
 const dbConnection = sqlite.open('banco.sqlite', { Promise })
 
+const port = process.env.port || 3000
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(boryParser.urlencoded({ extende: true }))
@@ -138,9 +140,9 @@ const init = async () => {
     // await bd.run(`insert into vagas(categoria, titulo, descricao) values (2,'${vaga}','${descricao}')`)
 }
 init()
-//comentario
+
 //listamos o servidor com a porta 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
     if (err) {
         console.log('Erro ao iniciar servidor do JobiFy!')
     } else {
