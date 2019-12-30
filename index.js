@@ -138,7 +138,7 @@ const init = async () => {
     // await bd.run(`insert into vagas(categoria, titulo, descricao) values (2,'${vaga}','${descricao}')`)
 }
 init()
-
+//comentario
 //listamos o servidor com a porta 
 app.listen(3000, (err) => {
     if (err) {
