@@ -13,6 +13,8 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(boryParser.urlencoded({ extende: true }))
 
+app.set('views', path.join(__dirname, 'views'))
+
 app.get('/', async (request, response) => {
     const db = await dbConnection
     const categoriasDb = await db.all('select * from categorias;')
